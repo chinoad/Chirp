@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add a Chirp</a><br/>
+<table>
+    <tr>
+        <th>Chirp</th>
+        <th>Posted By</th>
+        <th>Posted On</th>
+    </tr>
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.content}"></td>
+        <td th:text="${message.sentby}"></td>
+        <td th:text="${message.postdate}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${message.id})}">Update</a> ~
+            <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+
+        </td>
+
+
+    </tr>
+
+
+</table>
+</body>
+</html>
