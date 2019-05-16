@@ -9,6 +9,9 @@
 <body>
 <div class="card shadow p-3 mb-5 bg-white rounded w-50 p-3 text-center mx-auto" th:each="message : ${messages}">
     <div class="card-body">
+        <div  th:if="${message.picture} !=null">
+            <img class="card-img-top img-thumbnail w-40 p-3" th:src="${message.picture}"/>
+        </div>
         <h5 class="card-title" th:inline="text">[[${message.sentby}]]</h5>
         <p class="card-text" th:inline="text">[[${message.content}]]</p>
         <h6 class="card-subtitle mb-2 text-muted" th:inline="text">[[${message.postdate}]]</h6>

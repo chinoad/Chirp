@@ -15,6 +15,16 @@ public class Message {
     private String postdate;
     private String sentby;
 
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    private String picture;
+
 
     public long getId() {
         return id;

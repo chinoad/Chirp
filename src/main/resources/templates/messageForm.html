@@ -11,12 +11,14 @@
       th:action="@{/process}"
       th:object="${message}"
       method="post"
+      enctype="multipart/form-data"
 >
 
 
     <input class="form-control" type="hidden" th:field="*{id}"/>
     Chirp : <textarea class="form-control" rows="3" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br/>
+    <input type="file" name="file"/><br/><br/>
     Posted by : <input class="form-control" type="text" th:field="*{sentby}"/>
     <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br/>
     Posted on <input class="form-control" type="text" th:field="*{postdate}"/>
