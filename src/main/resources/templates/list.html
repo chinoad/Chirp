@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 </head>
 <body>
-<a href="/add">Add a Chirp</a><br/>
-<table>
-    <tr>
-        <th>Chirp</th>
-        <th>Posted By</th>
-        <th>Posted On</th>
-    </tr>
-    <tr th:each="message : ${messages}">
-        <td th:text="${message.content}"></td>
-        <td th:text="${message.sentby}"></td>
-        <td th:text="${message.postdate}"></td>
-        <td>
-            <a th:href="@{/update/{id}(id=${message.id})}">Update</a> ~
-            <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+<div class="card shadow p-3 mb-5 bg-white rounded w-50 p-3 text-center mx-auto" th:each="message : ${messages}">
+    <div class="card-body">
+        <h5 class="card-title" th:inline="text">[[${message.sentby}]]</h5>
+        <p class="card-text" th:inline="text">[[${message.content}]]</p>
+        <h6 class="card-subtitle mb-2 text-muted" th:inline="text">[[${message.postdate}]]</h6>
+        <a class="card-link" th:href="@{/update/{id}(id=${message.id})}">Edit</a>
+        <a class="card-link" th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+    </div>
+</div>
+<div class="text-center">
 
-        </td>
+    <a button type="button" class="btn btn-outline-secondary text-center" href="/add">Add a Chirp</a><br/>
+    <div/>
 
-
-    </tr>
-
-
-</table>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
 </html>
