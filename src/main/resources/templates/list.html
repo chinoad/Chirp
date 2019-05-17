@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
 </head>
 <body>
-<div class="card shadow p-3 mb-5 bg-white rounded w-50 p-3 text-center mx-auto" th:each="message : ${messages}">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        BowWow <i class="fas fa-dog"></i></a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/add">BOW</a>
+            </li>
+        </ul>
+
+
+
+</nav>
+
+
+<div class="card shadow p-3 mt-5 bg-white rounded w-30 p-3 text-center mx-auto" style="width: 18rem;" th:each="message : ${messages}">
     <div class="card-body">
-        <div  th:if="${message.picture} !=null">
+        <div th:if="${message.picture} !=null">
             <img class="card-img-top img-thumbnail w-40 p-3" th:src="${message.picture}"/>
         </div>
         <h5 class="card-title" th:inline="text">[[${message.sentby}]]</h5>
@@ -21,8 +48,7 @@
 </div>
 <div class="text-center">
 
-    <a button type="button" class="btn btn-outline-secondary text-center" href="/add">Add a Chirp</a><br/>
-    <div/>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

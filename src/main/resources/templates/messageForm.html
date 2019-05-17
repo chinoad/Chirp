@@ -3,40 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Pacifico&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
 </head>
 <body>
-<form class="form-group shadow p-3 mb-5 bg-white rounded w-50 p-3 mx-auto" action="#"
-      th:action="@{/process}"
-      th:object="${message}"
-      method="post"
-      enctype="multipart/form-data"
->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        BowWow <i class="fas fa-dog"></i></a>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/">ABOUT</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">BOW</a>
+        </li>
+    </ul>
 
+</nav>
+<h3 class="heading">Go Ahead... Introduce Yourself!</h3>
+<div class="container p-5">
+    <form class="form-group shadow p-3 mb-5 bg-white rounded w-50 p-3 mx-auto" action="#"
+          th:action="@{/process}"
+          th:object="${message}"
+          method="post"
+          enctype="multipart/form-data"
+    >
 
-    <input class="form-control" type="hidden" th:field="*{id}"/>
-    Chirp : <textarea class="form-control" rows="3" th:field="*{content}" />
-    <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br/>
-    <input type="file" name="file"/><br/><br/>
-    Posted by : <input class="form-control" type="text" th:field="*{sentby}"/>
-    <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br/>
-    Posted on <input class="form-control" type="text" th:field="*{postdate}"/>
-    <span th:if="${#fields.hasErrors('postdate')}" th:errors="*{postdate}"></span><br/>
+        <input class="form-control" p-3 mt-5 style="width: 20rem;" type="hidden" th:field="*{id}"/>
+        About You : <textarea class="form-control" rows="3" th:field="*{content}"/>
+        <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br/>
+        <input type="file" name="file"/><br/><br/>
+        Your Name : <input class="form-control" type="text" th:field="*{sentby}"/>
+        <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br/>
+        Posted on <input class="form-control" type="text" th:field="*{postdate}"/>
+        <span th:if="${#fields.hasErrors('postdate')}" th:errors="*{postdate}"></span><br/>
 
-    <br/>
-    <div class="text-center">
-    <input type="submit" value="chirp" class="btn btn-outline-secondary text-center"><br/></div>
+        <br/>
+        <div class="text-center">
+            <input type="submit" value="BOW" class="btn btn-outline-secondary text-center"><br/></div>
 
-</form>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    </form>
+    <div/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
 </html>

@@ -40,6 +40,8 @@ public class HomeController {
     public String processActor(@ModelAttribute Message message, @RequestParam("file")MultipartFile file){
         if(file.isEmpty()){
 
+
+
             return "redirect:/add";
         }
         try{
