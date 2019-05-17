@@ -15,11 +15,17 @@ body {
 
  }
 
-.nav-link {
-    color: gray;
+ .card {
+     font-family: 'Arapey', serif;
+ }
+
+
+
+
+.card {
+    font-family: 'Arapey', serif;
 
 }
-
 
 .img-thumbnail {
     width: 150px;
